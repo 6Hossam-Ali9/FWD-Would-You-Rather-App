@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+body{
+    background-color:#9303A6;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav{
+    background-color: beige;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav > ul > li{
+    display: inline-block;
+    padding: 15px;
+    font-size: 20px;
+}
+nav > ul > li > a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+nav > ul > li > a:hover{
+    background-color: bisque;
+}
+nav > ul > li.active > a{
+    background-color: rgb(246, 205, 155);
+    color: rgb(121, 32, 121);
+    font-weight: bold;
+}
+.hello{
+    text-align: center;
+    color: bisque;
+}
+.center {
+    width: 50%;
+    margin: auto;
+    border: 3px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+.login-window{
+    height: 400px;
+    padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.select{
+    font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.head-new{
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-ques > input{
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    height: 20px;
+    padding: 10px;
 }
+
+.new-ques > button{
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 100px;
+}
+
+.new-ques > .hover-prop:hover{
+    background-color: #9303A6;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.new-ques > h2{
+    color: antiquewhite;
+}
+
+.leader-board{
+    text-align: center;
+}
+
+.card > h2{
+    color: antiquewhite;
+}
+.card > h3{
+    color: antiquewhite;
+}
+.card > h1 > span{
+    border: 3px solid black;
+    width: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    background-color: black;
+    color: antiquewhite;
+}
+li.card{
+    padding: 10px;
+    border-bottom: solid 3px antiquewhite;
+    list-style-type: none;
+}
+
+.quest > .item{
+    display: block;
+    text-align: center;
+    background-color: beige;
+    padding: 10px;
+    margin: 20px auto;
+    width: 50%;
+    border: black solid 3px;
+    border-radius: 100px;
+}
+
+.asked{
+    border-bottom: solid 1px grey;
+    padding-bottom: 10px;
+}
+
+.switch-page{
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+
+}
+
+.switch-page > li{
+    display: inline-block;
+    margin: 20px 40px;
+    font-size: 40px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 20px;
+    color: #9303A6;
+    cursor: pointer;
+}
+
+.switch-page > li.active{
+    background-color: rgb(246, 205, 155);
+    font-weight: bold;
+    border: solid beige 3px;
+}
+
+.switch-page > li:hover{
+    background-color: rgb(246, 205, 155);
+    border: solid beige 3px;
+}
+ 
+ .quest > .item > a{
+    display: block;
+    width: 200px;
+    text-decoration: none;
+    color: #9303A6;
+    font-weight: bold;
+    border: grey solid 1px;
+    background-color: aliceblue;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 100px;
+    margin: 10px auto;
+}
+
+ .quest > .item > a:hover{
+    background-color: rgb(246, 205, 155);
+ }
+
+ .quest > .item > .chosen{
+     font-weight: bold;
+     font-size: 2em;
+     color:#9303A6;
+ }
+ .quest > .item > .chosen > span{
+     color: black;
+ }
+
+ .quest > .item > .option{
+     padding: 10px;
+     border: 3px solid #9303A6;
+     width: 300px;
+     margin: 20px auto;
+     border-radius: 100px;
+ }
+
+ .quest > .item > .option:hover{
+     cursor: pointer;
+     background-color: #9303A6;
+     color: beige;
+ }
+
+ .quest > .item > .active{
+    cursor: pointer;
+    background-color: #9303A6;
+    color: beige;
+    border-color: black
+}
+
+.quest > .item > button{
+    color: #9303A6;
+    font-weight: bold;
+    border: grey solid 1px;
+    background-color: aliceblue;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 100px;
+    margin: 10px auto;
+}
+
+ .quest > .item > button:hover{
+    background-color: rgb(246, 205, 155);
+ }
