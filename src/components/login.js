@@ -5,7 +5,7 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends React.Component{
     render(){
-        console.log(this.props.authedUser) 
+        console.log(this.props) 
         return(
             <div className="center login-window">
                 <div className="contained">
@@ -17,8 +17,12 @@ class Login extends React.Component{
                     className="select"
                     defaultValue="Choose your user"
                     onChange={(e) => {
-                        this.props.dispatch(setAuthedUser(e.target.value))
-                        this.props.history.push('/')
+                            this.props.dispatch(setAuthedUser(e.target.value))
+                            if(this.props.location.state !== undefined){
+                                this.props.history.push(this.props.location.state.path)
+                            } else{
+                                this.props.history.push("/")
+                            }
                         }
                     }
                     >

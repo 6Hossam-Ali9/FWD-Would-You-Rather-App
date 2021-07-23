@@ -9,6 +9,7 @@ class LeaderBoard extends React.Component{
         const allUsers = Object.values(users)
           .map(user => ({
             name: user.name,
+            avatar: user.avatarURL,
             answerCount: Object.values(user.answers).length,
             questionCount: user.questions.length,
             total: Object.values(user.answers).length + user.questions.length
@@ -24,7 +25,7 @@ class LeaderBoard extends React.Component{
                         {allUsers.map((user, idx) => {
                             return(
                                 <li key ={idx} className="card">
-                                    <img src={user.avatarURL} alt={`${user.name} avatar`}/>
+                                    <img src={user.avatar} alt={`${user.name} avatar`} className="lead-img"/>
                                     <h2>{user.name}</h2>
                                     <h3>Quesions added {user.questionCount}</h3>
                                     <h3>Quesions answered {user.answerCount}</h3>

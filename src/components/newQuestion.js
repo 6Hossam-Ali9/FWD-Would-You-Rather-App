@@ -28,6 +28,7 @@ class NewQuestion extends React.Component{
             opt1: '',
             opt2: ''
         }))
+        this.props.history.push("/");
     }
     render(){
         return(

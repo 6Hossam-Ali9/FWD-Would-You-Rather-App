@@ -3,7 +3,7 @@ import Navbar from './navbar'
 import {connect} from 'react-redux'
 import {handleAnswerQuestions} from '../actions/questions'
 
-class QuestionDetails extends React.Component{
+class SubmitAnswer extends React.Component{
     state ={
         chosen:''
     }
@@ -14,14 +14,15 @@ class QuestionDetails extends React.Component{
         }))
         // console.log(this.state.chosen)
     }
-
+    
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.dispatch(handleAnswerQuestions({authedUser: this.props.authedUser,qid:this.props.match.params.qid, answer: this.state.chosen}))
+        this.props.dispatch(handleAnswerQuestions({authedUser: this.props.authedUser,qid:this.props.qid, answer: this.state.chosen}))
     }
     render(){
+        // console.log(this.props)
         const {questions, authedUser, users} = this.props
-        const {qid} = this.props.match.params
+        const {qid} = this.props
         const question = questions[qid]
         return(
             <div>
@@ -60,4 +61,4 @@ const mapStateToProps = ({authedUser, questions, users}) => ({
     users
 })
 
-export default connect(mapStateToProps)(QuestionDetails)
+export default connect(mapStateToProps)(SubmitAnswer)

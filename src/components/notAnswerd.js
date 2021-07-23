@@ -28,12 +28,12 @@ class NotAnswerd extends React.Component{
                         return(
                             <li key={question.id} className="item">
                                 <img src={users[question.author].avatarURL} alt={`${users[question.author].name} avatar`}/>
-                                <h2 className="asked">{users[question.author].name}</h2>
+                                <h2 className="asked">{users[question.author].name} asked</h2>
                                 <h1>Would You Rather:</h1>
                                 <h3>{question.optionOne.text}</h3>
                                 <h4>Or</h4>
                                 <h3>{question.optionTwo.text}</h3>
-                                <Link to ={`/answers/${question.id}`}>Vote</Link>
+                                <Link to ={`/questions/${question.id}`}>Vote</Link>
                             </li>
                         )
                     })}

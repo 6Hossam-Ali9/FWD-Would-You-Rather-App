@@ -8,8 +8,10 @@ class Navbar extends React.Component{
         const {users, authedUser} = this.props
         return(
             <div>
-                <img src="../avatars/avatara.PNG" alt=""/>
-                <h1 style={{fontWeight:'bold'}} className="hello"> Hello, {users[authedUser].name}</h1>
+                <div className="nav-header">
+                    <img src={users[authedUser].avatarURL} alt={`${users[authedUser].name} avatar`} className="nav-img"/>
+                    <h1 style={{fontWeight:'bold'}} className="hello"> Hello, {users[authedUser].name}</h1>
+                </div>
                 <nav className="navbar">
                     <ul className="nav">
                         <li className={this.props.page==='home'?("active"):undefined}><Link to="/">Home</Link></li>

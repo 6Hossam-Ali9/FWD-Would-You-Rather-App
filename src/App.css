@@ -12,6 +12,16 @@ nav{
     margin-top: 0px;
 }
 
+.nav-img{
+    display: block;
+    margin:  auto;
+    width: 80px;
+    border-radius: 500px;
+}
+.hello{
+    color: bisque;
+    text-align: center;
+}
 nav > ul > li{
     display: inline-block;
     padding: 15px;
@@ -30,10 +40,7 @@ nav > ul > li.active > a{
     color: rgb(121, 32, 121);
     font-weight: bold;
 }
-.hello{
-    text-align: center;
-    color: bisque;
-}
+
 .center {
     width: 50%;
     margin: auto;
@@ -86,19 +93,27 @@ nav > ul > li.active > a{
     text-align: center;
 }
 
+.lead-img{
+    width: 100px;
+}
+
 .card > h2{
-    color: antiquewhite;
+    color: rgb(246, 205, 155);
 }
 .card > h3{
-    color: antiquewhite;
+    color: rgb(246, 205, 155);
+}
+.card > h1{
+    color: beige;
+    font-weight: bold;
 }
 .card > h1 > span{
-    border: 3px solid black;
+    border: 3px solid beige;
     width: 10px;
     padding: 5px 10px;
     border-radius: 100px;
-    background-color: black;
-    color: antiquewhite;
+    background-color: rgb(246, 205, 155);
+    color: #9303A6;
 }
 li.card{
     padding: 10px;
@@ -212,4 +227,9 @@ li.card{
 
  .quest > .item > button:hover{
     background-color: rgb(246, 205, 155);
+ }
+
+ .quest > .item > img{
+     width: 7em;
+     border-radius: 100px;
  }
