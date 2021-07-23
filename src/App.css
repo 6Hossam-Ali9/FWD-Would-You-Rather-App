@@ -233,3 +233,7 @@ li.card{
      width: 7em;
      border-radius: 100px;
  }
+
+.err-pg{
+    text-align: center;
+}

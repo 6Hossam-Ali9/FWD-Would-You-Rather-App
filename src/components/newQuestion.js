@@ -22,7 +22,6 @@ class NewQuestion extends React.Component{
 
     handleOnSubmite = e => {
         e.preventDefault() 
-        console.log(this.props.authedUser)
         this.props.dispatch(handleAddQuestions({optionOneText:this.state.opt1, optionTwoText:this.state.opt2, author:this.props.authedUser}));
         this.setState(() => ({
             opt1: '',
@@ -33,7 +32,7 @@ class NewQuestion extends React.Component{
     render(){
         return(
             <div>
-                <Navbar page="new" authedUser={this.props.authedUser}/>
+                <Navbar page="new"/>
                 <form onSubmit ={this.handleOnSubmite} className="new-ques">
                     <h2 className="head-new">Would you Rather...</h2>
                     <input type="text" placeholder="Put option one" value={this.state.opt1} onChange={(e) => this.handleOnChangeOne(e.target.value)}/>

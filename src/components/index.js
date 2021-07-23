@@ -18,7 +18,7 @@ class Home extends React.Component{
         const {questions, authedUser, users} = this.props
         return(
             <div>
-                <Navbar page="home" authedUser={this.props.authedUser}/>
+                <Navbar page="home"/>
                 <div className="sec-nav">
                     <ul className="switch-page">
                         <li key="not-answerd" onClick={() => this.handleOnClick('notAnswerd')} className={this.state.page==='notAnswerd'?("active"):undefined}>Not Answerd</li>

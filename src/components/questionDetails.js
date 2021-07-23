@@ -5,31 +5,26 @@ import SubmitAnswer from './submitAnswer'
 import NotFound from './notFound'
 import Login from './login'
 
-class QuestionDetails extends React.Component{
-    render(){
-        // console.log(Object.keys(this.props.questions));
-        console.log(this.props);
-        if(this.props.authedUser !== null){
-            console.log('opt1')
-            if(Object.keys(this.props.questions).includes(this.props.match.params.qid)){
-                if(Object.keys(this.props.users[this.props.authedUser].answers).includes(this.props.match.params.qid)){
-                    return(
-                        <Results qid ={this.props.match.params.qid}/>
-                    )
-                } else{
-                    return <SubmitAnswer qid ={this.props.match.params.qid} history={this.props.history}/>
-                }
-            } else{
+const QuestionDetails = (props) => {
+    // console.log(Object.keys(props.questions));
+    if(props.authedUser !== null){
+        if(Object.keys(props.questions).includes(props.match.params.qid)){
+            if(Object.keys(props.users[props.authedUser].answers).includes(props.match.params.qid)){
                 return(
-                    <NotFound />
+                    <Results qid ={props.match.params.qid}/>
                 )
+            } else{
+                return <SubmitAnswer qid ={props.match.params.qid} history={props.history}/>
             }
-        } else {
-            console.log('op2');
+        } else{
             return(
-                <Login location={this.props.location} history={this.props.history} qid ={this.props.match.params.qid}/>
+                <NotFound />
             )
         }
+    } else {
+        return(
+            <Login location={props.location} history={props.history} qid ={props.match.params.qid}/>
+        )
     }
 }
 

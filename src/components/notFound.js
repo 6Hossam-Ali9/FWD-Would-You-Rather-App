@@ -1,15 +1,16 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-class NotFound extends React.Component{
-    
-    render(){
-        return(
-            <div>
+import Navbar from './navbar'
+
+
+const NotFound = (props) => {
+    return(
+        <div>
+            <Navbar />
+            <div className="err-pg">
                 <h1>404, Page Not Found!!</h1>
-                <h1><Link to="/login">Go To Login Page!</Link></h1>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default NotFound

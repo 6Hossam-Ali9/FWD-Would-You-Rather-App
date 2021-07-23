@@ -21,12 +21,12 @@ class SubmitAnswer extends React.Component{
     }
     render(){
         // console.log(this.props)
-        const {questions, authedUser, users} = this.props
+        const {questions, users} = this.props
         const {qid} = this.props
         const question = questions[qid]
         return(
             <div>
-                <Navbar page="none" authedUser={authedUser}/>
+                <Navbar page="none"/>
                 <div className="quest">
                     <div className="item">
                         <img src={users[question.author].avatarURL} alt={`${users[question.author].name} avatar`}/>
@@ -56,9 +56,9 @@ class SubmitAnswer extends React.Component{
 }
 
 const mapStateToProps = ({authedUser, questions, users}) => ({
-    authedUser,
     questions,
-    users
+    users,
+    authedUser
 })
 
 export default connect(mapStateToProps)(SubmitAnswer)

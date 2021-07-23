@@ -3,47 +3,44 @@ import {connect} from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
 
 
-class Login extends React.Component{
-    render(){
-        console.log(this.props) 
-        return(
-            <div className="center login-window">
-                <div className="contained">
-                    <h1>Welcome To Would You Rather!</h1>
-                    <h3>Please, Login to continue</h3>
-                    <select 
-                    name="selectList" 
-                    id="selectList" 
-                    className="select"
-                    defaultValue="Choose your user"
-                    onChange={(e) => {
-                            this.props.dispatch(setAuthedUser(e.target.value))
-                            if(this.props.location.state !== undefined){
-                                this.props.history.push(this.props.location.state.path)
-                            } else{
-                                if(this.props.qid !== undefined){
-                                    this.props.history.push(`/questions/${this.props.qid}`)
-                                } else {
-                                    this.props.history.push("/")
-                                }
+const Login = (props) => {
+    return(
+        <div className="center login-window">
+            <div className="contained">
+                <h1>Welcome To Would You Rather!</h1>
+                <h3>Please, Login to continue</h3>
+                <select 
+                name="selectList" 
+                id="selectList" 
+                className="select"
+                defaultValue="Choose your user"
+                onChange={(e) => {
+                        props.dispatch(setAuthedUser(e.target.value))
+                        if(props.location.state !== undefined){
+                            props.history.push(props.location.state.path)
+                        } else{
+                            if(props.qid !== undefined){
+                                props.history.push(`/questions/${props.qid}`)
+                            } else {
+                                props.history.push("/")
                             }
                         }
                     }
-                    >
-                        <option value="Choose your user" disabled>Choose your user</option>
-                       {Object.keys(this.props.users).map((key) => {
-                            const user = this.props.users[key]
-                            return(
-                            <option value={user.id} key={user.id}>
-                                {user.name}
-                            </option>
-                            )
-                        })}
-                    </select>
-                </div>
+                }
+                >
+                    <option value="Choose your user" disabled>Choose your user</option>
+                   {Object.keys(props.users).map((key) => {
+                        const user = props.users[key]
+                        return(
+                        <option value={user.id} key={user.id}>
+                            {user.name}
+                        </option>
+                        )
+                    })}
+                </select>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 const mapStateToProps = ({authedUser, users}) => (
