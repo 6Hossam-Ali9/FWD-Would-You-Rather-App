@@ -21,7 +21,11 @@ class Login extends React.Component{
                             if(this.props.location.state !== undefined){
                                 this.props.history.push(this.props.location.state.path)
                             } else{
-                                this.props.history.push("/")
+                                if(this.props.qid !== undefined){
+                                    this.props.history.push(`/questions/${this.props.qid}`)
+                                } else {
+                                    this.props.history.push("/")
+                                }
                             }
                         }
                     }

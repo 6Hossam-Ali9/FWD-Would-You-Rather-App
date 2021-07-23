@@ -3,21 +3,31 @@ import {connect} from 'react-redux'
 import Results from './seeResults'
 import SubmitAnswer from './submitAnswer'
 import NotFound from './notFound'
+import Login from './login'
 
 class QuestionDetails extends React.Component{
     render(){
         // console.log(Object.keys(this.props.questions));
-        if(Object.keys(this.props.questions).includes(this.props.match.params.qid)){
-            if(Object.keys(this.props.users[this.props.authedUser].answers).includes(this.props.match.params.qid)){
-                return(
-                    <Results qid ={this.props.match.params.qid}/>
-                )
+        console.log(this.props);
+        if(this.props.authedUser !== null){
+            console.log('opt1')
+            if(Object.keys(this.props.questions).includes(this.props.match.params.qid)){
+                if(Object.keys(this.props.users[this.props.authedUser].answers).includes(this.props.match.params.qid)){
+                    return(
+                        <Results qid ={this.props.match.params.qid}/>
+                    )
+                } else{
+                    return <SubmitAnswer qid ={this.props.match.params.qid} history={this.props.history}/>
+                }
             } else{
-                return <SubmitAnswer qid ={this.props.match.params.qid} history={this.props.history}/>
+                return(
+                    <NotFound />
+                )
             }
-        } else{
+        } else {
+            console.log('op2');
             return(
-                <NotFound />
+                <Login location={this.props.location} history={this.props.history} qid ={this.props.match.params.qid}/>
             )
         }
     }

@@ -29,7 +29,7 @@ class App extends React.Component{
           <ProtectedRoute exact path='/' name = 'home' component = {Home}/>
           <ProtectedRoute exact path='/leaderboard' name = 'Leader Board' component = {LeaderBoard}/>
           <ProtectedRoute exact path='/add' name = 'New Question' component = {NewQuestion}/>
-          <ProtectedRoute exact path='/questions/:qid' name = 'Question poll' component = {QuestionDetails}/>
+          <Route exact path='/questions/:qid' name = 'Question poll' component = {QuestionDetails}/>
           <Route  component = {NotFound}/>
         </Switch>
       </div>
